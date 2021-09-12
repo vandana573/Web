@@ -1,0 +1,34 @@
+#profile{
+float: left;
+width: 100px;
+height: 100px;
+margin-top: 60px;
+}
+
+*{
+    font-family: 'Rambla', sans-serif;
+    color: #747704;
+}
+
+.name{
+    margin-bottom: 0px;
+}
+.center{
+    width: 1140px;
+    height: 350px;                                                               
+}
+
+.left{
+    width: 555px;
+    height: 300px;
+}
+
+.middle{
+    width: 555px;
+    height: 300px;
+}
+
+.right{
+    width: 555px;
+    height: 300px;
+}
