@@ -32,33 +32,25 @@ export class SearchRecipeComponent implements OnInit {
   }
 
   getVenues() {                                /* For retrieving details of the item*/
-
     this.recipeValue = this.recipes.nativeElement.value;
     this.placeValue = this.places.nativeElement.value;
-
     if (this.recipeValue !== null) {             /* For retrieving food which matches with the search*/
       this._http.get('https://api.edamam.com/search?q=' + this.recipeValue +
-        '&app_id=036cd118&app_key=287414f6501087839c2261422a63bc1b').subscribe((recipes: any) => {
+        '&app_id=d0159eaa&app_key=\n' + 'cb439227a6194ebb0695233578ce664c').subscribe((recipes: any) => {
         this.recipeList = Object.keys(recipes.hits).map(function (rec) {
           const recipe = recipes.hits[rec].recipe;
           console.log(recipe.digest[0].schemaOrgTag);
           return {name: recipe.label, content: recipe.digest[0].schemaOrgTag, icon: recipe.image, add: recipe.address, url: recipe.url};
         });
       });
-
-
     }
-
     if (this.placeValue != null) {                   /* For retrieving location of the item*/
       if (this.placeValue !== '') {
-        this._http.get('https://api.foursquare.com/v2/venues/search?client_id=HB1CVTCHDXNIFD0NSZKTJNXJYKYBBP4B0HJEUDL0T2IKJZZO' +
+        this._http.get('https://api.foursquare.com/v2/venues/search?client_id=VGMF0FMI0TS02L1GBNMZNQOIYC5UVPZG5P5CXGH3INQM1531' +
             // tslint:disable-next-line:max-line-length
-            '&client_secret=QY1NOC4K0WJ5JRGLZW24CPGNJYO12C15NHRG001H3MHJSSA0&v=20200625&near=' + this.placeValue + '&query=' + this.recipeValue).subscribe((restaurants: any) => {
-          // console.log(restaurants)
+            '&client_secret=SDVG0L0XWCCRHGKRG0HJNBKNAUVAEJD3LMNRGSQ0GEWQVYDB&v=20200625&near=' + this.placeValue + '&query=' + this.recipeValue).subscribe((restaurants: any) => {
           this.venueList = Object.keys(restaurants.response.venues).map(function (input) {
             const restaurant = restaurants.response.venues[input];
-            // console.log(restaurants.response.geocode)
-            // console.log(restaurant.location.labeledLatLngs[0].lat);
             return {
               name: restaurant.name,
               currentLat: restaurant.location.labeledLatLngs[0].lng,
