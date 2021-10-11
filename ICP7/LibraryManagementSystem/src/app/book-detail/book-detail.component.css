@@ -1,0 +1,24 @@
+.example-card {
+  max-width: 900px;
+  border-radius: 20px;
+}
+
+.button-row {
+  margin: 10px 0;
+}
+
+dd {
+  color: darkorchid;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+mat-card-content {
+  font-size: 20px;
+}
+
+a {
+  border-radius: 20px;
+}

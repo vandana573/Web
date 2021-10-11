@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+  margin: 0 5%;
+  background: rgb(185, 68, 224);
+  background: radial-gradient(circle, rgb(75, 129, 121) 0%, rgb(233, 175, 89) 100%);
+}
+
+.example-container, form, button {
+  border-radius: 20px !important;
+}
+
+form {
+  background: rgba(253, 202, 0, 0.75);
+  padding: 20px;
+}
+
+h1 {
+  color: #4b4949;
+  font-size: 40px;
+  font-family: sans-serif;
+}
